@@ -110,7 +110,7 @@ Resources:
       Properties:
         VPCZoneIdentifier:
         - Fn::ImportValue:
-            !Sub "{EnvironmentName}-PRIV-NETS"
+            !Sub ${EnvironmentName}-PRIV-NETS
         LaunchConfigurationName:
         - Ref: WebAppLaunchConfig            
         MinSize: '3'  
@@ -121,7 +121,7 @@ Resources:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
       Subnets:
-      - Fn::ImportValue: !Sub "${EnvironmentName}-PUB1-SN"
+      - Fn::ImportValue: !Sub "${EnvironmentName}-PUB-NET1"
       - Fn::ImportValue: !Sub "${EnvironmentName}-PUB-NET2"
       SecurityGroups:
       - Ref: LBSecGroup
