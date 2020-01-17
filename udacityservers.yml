@@ -122,7 +122,7 @@ Resources:
     Properties:
       Subnets:
       - Fn::ImportValue: !Sub "${EnvironmentName}-PUB1-SN"
-      - Fn::ImportValue: !Sub "${EnvironmentName}-PUB2-SN"
+      - Fn::ImportValue: !Sub "${EnvironmentName}-PUB-NET2"
       SecurityGroups:
       - Ref: LBSecGroup
   Listener:
