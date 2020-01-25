@@ -89,13 +89,13 @@ Resources:
         Properties:
           UserData:
             Fn::Base64: !Sub |
-              #!/bin/bash
-              apt-get update -y
-              apt-get install unzip awscli -y
-              apt-get install apache2 -y
-              sudo systemtl start apache2.service
-              cd /var/www/html
-              aws s3 cp s3://udacity-demo-1/udacity.zip                
+                #!/bin/bash
+                apt-get update -y
+                apt-get install unzip awscli -y
+                apt-get install apache2 -y
+                sudo systemtl start apache2.service
+                cd /var/www/html
+                aws s3 cp s3://udacity-demo-1/udacity.zip                
             ImageId: ami-005bdb005fb00e791
             IamInstanceProfile: !Ref ListS3BucketsInstanceProfile
             SecurityGroups:
