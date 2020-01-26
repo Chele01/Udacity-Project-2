@@ -98,6 +98,7 @@ Resources:
                 aws s3 cp s3://udacity-demo-1/udacity.zip                
             ImageId: ami-005bdb005fb00e791
             IamInstanceProfile: !Ref ListS3BucketsInstanceProfile
+            
             SecurityGroups:
             - Ref: WebServerSecGroup
             InstanceType: t3.small
